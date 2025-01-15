@@ -38,6 +38,10 @@ def main():
             if a.check_collision(player):
                 print("Game over!")
                 exit()
+            for shot in projectiles:
+                if shot.check_collision(a):
+                    a.split()
+                    shot.kill()
         for d in drawables:
             d.draw(screen)
         pygame.display.flip()
